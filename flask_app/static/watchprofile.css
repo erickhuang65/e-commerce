@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    margin-right: 20px;
+}
+
+.image-container img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.3s;
+}
+
+.image-container img:hover {
+    opacity: 0.8;
+}
+
+.text-container {
+    flex: 1;
+}
+
+h1 {
+    text-align: left;
+    color: #010b15;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.price {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 20px;
+}
+
+.buy-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-section h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.comment-section textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    resize: none;
+}
+
+.submit-comment {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-comment:hover {
+    background-color: #218838;
+}
+
+.no-profile {
+    text-align: center;
+    color: #dc3545;
+    font-size: 18px;
+    margin-top: 20px;
+}

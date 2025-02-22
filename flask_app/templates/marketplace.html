@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='marketplace.css') }}"">
+</head>
+<body>
+        <header>
+            <div class="flex" style="display: flex; align-items: center; justify-content: center;">
+                <div class="flex-1" style="margin-right: 20px">
+                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo" style="width: 100px; height: 50px; border-radius: 10px;">
+                </div>
+            <!-- Search Bar -->
+            <div class="search" style="margin-right: 20px">
+                <form action="/search/process" method="POST">
+                    <input type="text" name="query" placeholder=" Search through the library for watches" style="width: 1000px; height: 50px; border-radius: 10px;">
+                </form>
+            </div>
+            <a href="/login" style="text-decoration: none; color: inherit;">
+                <p>Log in or register</p>
+            </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="product-container">
+                {% for product in data %}
+                    <div class="product-item">
+                    <a href="profile/reference/{{ product['Reference'] }}">
+                        <img src="{{ product['Temp URL'] }}" alt='images'>
+                    </a>
+                        <p>{{ product['Name'] }}</p>
+                        <p>{{ product['Price'] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>        
+</body>
+</html>

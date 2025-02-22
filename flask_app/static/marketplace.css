@@ -1,0 +1,57 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.product-item {
+    text-align: center; /* Center content inside each item */
+    border: 1px solid #ddd; /* Optional: Add border to each product item */
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+.product-item img {
+    max-width: 100%;  /* Makes sure the image scales within its container */
+    height: auto;  /* Maintains the aspect ratio */
+    max-height: 250px;  /* Limit the height of the image */
+    object-fit: cover;  /* Ensures the image fits without distortion */
+    border-radius: 8px;
+}
+
+.product-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+/* Optional: Media Query for smaller screens */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

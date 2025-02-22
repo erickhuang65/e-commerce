@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='watchprofile.css') }}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="container">
+        {% if data %}
+            {% for item in data %}
+                <div class="profile-content">
+                    <div class="image-container">
+                        <img src="{{ item['Temp URL'] }}" alt="image">
+                    </div>
+                    <div class="text-container">
+                        <h1>{{ item['Name'] }}</h1>
+                        <p class="price">{{ item['Price'] }}</p>
+                        <a href="/create-checkout-session/{{ item['Reference'] }}">
+                            <button class="buy-button" type="submit">Buy Now</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="comment-section">
+                    <h2>Comments</h2>
+                    <textarea placeholder=" Leave a comment..." rows="4"></textarea>
+                    <button class="submit-comment">Submit</button>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-profile">No profile found for this reference</p>
+        {% endif %}
+    </div>
+</body>
+</html>
